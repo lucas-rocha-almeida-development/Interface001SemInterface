@@ -29,7 +29,7 @@ namespace Interface001
             //fazendo instancia
             AluguelCarro carroaluguel = new AluguelCarro (start,End,new Veiculo(modelo));
 
-            ServicoAluguel servicoAluguel = new ServicoAluguel(houras, Dias);
+            ServicoAluguel servicoAluguel = new ServicoAluguel(houras, Dias, new TaxaServicoBrasil());
             
 
             servicoAluguel.ProcessamentoPagamento (carroaluguel);

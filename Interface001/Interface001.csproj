@@ -48,6 +48,7 @@
     <Compile Include="Entitides\Veiculo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ITaxaServico.cs" />
     <Compile Include="Services\ServicoAluguel.cs" />
     <Compile Include="Services\TaxaServicoBrasil.cs" />
   </ItemGroup>

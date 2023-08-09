@@ -13,14 +13,15 @@ namespace Interface001.Services
         public double  PrecoPorHora { get; private set; }//somente obter not modificar
         public double PrecoPorDia { get; private set; }//somente obter not modificar
 
-        private TaxaServicoBrasil _braziltaxaimposto = new TaxaServicoBrasil();
+        private ITaxaServico _taxaimposto;
 
 
         //construtor
-        public ServicoAluguel(double precoPorHora, double precoPorDia)
+        public ServicoAluguel(double precoPorHora, double precoPorDia,ITaxaServico taxaimposto)
         {
             PrecoPorHora = precoPorHora;
             PrecoPorDia = precoPorDia;
+            _taxaimposto = taxaimposto;
         }
         //metodo 
         public void ProcessamentoPagamento (AluguelCarro carroaluguel)
@@ -42,7 +43,7 @@ namespace Interface001.Services
 
             //calcular valor do imposto
 
-            double taxa = _braziltaxaimposto.Taxa(basicoPagamento);
+            double taxa = _taxaimposto.Taxa(basicoPagamento);
 
             carroaluguel.Fatura = new Fatura (basicoPagamento, taxa);//processaro a fatura 
 

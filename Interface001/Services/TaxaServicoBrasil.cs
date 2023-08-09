@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Interface001.Services
 {
-    internal class TaxaServicoBrasil{
+    internal class TaxaServicoBrasil : ITaxaServico{
         public double Taxa(double quantia)
         { if(quantia <= 100.0)
             {
